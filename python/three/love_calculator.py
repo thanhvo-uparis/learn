@@ -11,12 +11,9 @@ true_value = name_string.count("t") + name_string.count("r") + name_string.count
 love_value = name_string.count("l") + name_string.count("o") + name_string.count("v") + name_string.count("e")
 score = int(str(true_value) + str(love_value))
 
-myString = ""
-if score <10 or score > 90:
-    myString += ", you go together like coke and mentos"
+if score < 10 or score > 90:
+    print(f"Your score is {score}, you go together like coke and mentos.")
 elif score >= 40 and score <= 50:
-    myString += ", you are alright together"
+    print(f"Your score is {score}, you are alright together.")
 else:
-    myString = ""
-
-print(f"Your score is {score}{myString}.")
+    print(f"Your score is {score}.")
