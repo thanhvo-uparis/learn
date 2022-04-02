@@ -11,4 +11,20 @@ list = [1, 2, 3]
 # list2 = list.copy()
 # print(list2)
 
+#vd 2
+country = ["VietNam", "French", "Japan", "US"]
+city = ["Ha Noi", "TP.HCM", "Tokyo", "New York", "Paris"]
+
+state = [country, city]
+
+# state[0][-1] = "American"
+# or
+# country[-1] = "American2"
+
+city.remove("TP.HCM")
+city.pop(1)
+
+print(state)
+
+
 
