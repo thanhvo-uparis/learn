@@ -11,9 +11,15 @@ display = []
 for n in chosen_word:
     display.append('_')
 while display.count('_') >= 1:
-    guess =input("Guess a letter: ").lower()
-    if display.count(guess) == 0:
-        for position in range(len(chosen_word)):
-            if chosen_word[position] == guess:
-                display[position] = guess
-                print(display)
+    guess = input("Guess a letter: ").lower()
+    if chosen_word.count(guess) == 0:
+        print(f"{guess} khong dung, vui long nhap vao gia tri khac.")
+    elif display.count(guess) == 0:
+        for n in range(len(chosen_word)):
+            if chosen_word[n] == guess:
+                display[n] = guess
+        print(display)
+    else:
+        print(f"{guess} da ton tai.")
+
+print("You win.")
