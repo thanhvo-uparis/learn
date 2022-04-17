@@ -16,15 +16,19 @@ shift = int(input("Type the shift number: "))
 
 def encrypt(plain_text, shift):
     cipher_text = ""
-    if direction=="encode":
-        for n in plain_text:
-            index_of_letter = alphabet.index(n)
-            cipher_text += alphabet[index_of_letter + shift]
-        print(f"The encoded text is {cipher_text}")
-    else:
-        for n in plain_text:
-            index_of_letter = alphabet.index(n)
-            cipher_text += alphabet[index_of_letter - shift]
-        print(cipher_text)
+    for n in plain_text:
+        index_of_letter = alphabet.index(n)
+        cipher_text += alphabet[index_of_letter + shift]
+    print(f"The encoded text is {cipher_text}")
+        
+def decrypt(plain_text, shift):
+    cipher_text = ""
+    for n in plain_text:
+        index_of_letter = alphabet.index(n)
+        cipher_text += alphabet[index_of_letter - shift]
+    print(f"The decoded text is {cipher_text}")
 
-encrypt(plain_text=text, shift=shift)
+if direction == "encode":
+    encrypt(plain_text=text, shift=shift)
+else:
+    decrypt(plain_text=text, shift=shift)
