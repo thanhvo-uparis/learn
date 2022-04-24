@@ -14,11 +14,13 @@ def add_user(name_user, bid_value):
 
 def find_winner(dic):
     max_bids = 0
+    name_key = ""
     for key in dic:
         if dic[key] > max_bids:
             max_bids = dic[key]
+            name_key = key
     
-    print(max_bids)
+    print(f"The winner is {name_key} with a bid of ${max_bids}")
 
 while not response:
     name = input("What is your name? ")
@@ -28,5 +30,4 @@ while not response:
     add_user(name_user=name, bid_value=bid)
     if res=='no':
         response = True
-
-find_winner(dic=bids)
+        find_winner(bids)
