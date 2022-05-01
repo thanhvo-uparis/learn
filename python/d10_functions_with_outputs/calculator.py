@@ -1,5 +1,4 @@
-from unicodedata import numeric
-
+import os
 
 def add(a, b):
     return a + b
@@ -20,19 +19,22 @@ operations = {
     "/": devide
 }
 
-num1 = int(input("What's the first number? "))
-for key in operations: 
-    print(key)
+def calculator():
+    num1 = int(input("What's the first number? "))
+    for key in operations:
+        print(key)
 
-operation_symbol = input("Pick an operation from the line above: ")
-num2 = int(input("What's the second number? "))
-output1 = operations[operation_symbol](num1, num2)
-print(f"{num1} {operation_symbol} {num2} is {output1}")
-num3 = int(input("What's the number 3? "))
-operation_symbol = input("Pick an operation from the line above: ")
-output2 = operations[operation_symbol](output1, num3)
-print(f"{output1} {operation_symbol} {num3} is {output2}")
+    verifier = True
+    while verifier:
+        operation_symbol = input("Pick an operation: ")
+        next_nb = int(input("What's the next number? ")) 
+        output = operations[operation_symbol](num1, next_nb)
+        print(f"{num1} {operation_symbol} {next_nb} = {output}.")
+        continue_calcul = input(f"Type 'y' to continue calculating with {output}, or type 'n' to exit. ")
+        if continue_calcul=='y':
+            num1 = output
+        else:
+            verifier = False
+            os.system("clear")
 
-# choice = input("Choice: ")
-# output = dictionary.get(choice)(first_nb, second_nb)
-# print(output)
+calculator()
